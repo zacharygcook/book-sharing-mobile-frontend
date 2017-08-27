@@ -10,5 +10,5 @@
 
 2. Use react-native command to run-android
 
-   * cd /.../booksharingapp/
+   * cd /...howeveryougettoit.../BookSharingApp/
    * react-native run-android
