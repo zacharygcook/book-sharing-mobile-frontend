@@ -1,23 +1,13 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
-import HomePage fom '../pages/Home';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+
+import Test from './app/components/Home/Home';
 
 export default class BookSharingApp extends Component {
   render() {
-    return (<div>
-      <HomePage />
-    </div>);
+    return (<View>
+      <Test />
+    </View>);
   }
 }
 
