@@ -8,7 +8,11 @@
    * cd /opt/genymobile/genymotion
    * ./genymotion
 
-2. Use react-native command to run-android
+2. Start react packager
+
+   * run 'react-native start' or 'npm start'
+
+3. Use react-native command to run-android
 
    * cd /...howeveryougettoit.../BookSharingApp/
    * react-native run-android
