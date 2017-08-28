@@ -17,6 +17,6 @@
    * cd /...howeveryougettoit.../BookSharingApp/
    * react-native run-android
 
-#### Helpful debugging device
+#### Helpful Debugging Advice
 
 Run: npm start -- --reset-cache
