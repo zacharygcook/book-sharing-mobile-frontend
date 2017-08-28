@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, TextInput, View } from 'react-native';
-import { Button } from 'native-base';
+// import { Button } from 'native-base';
 
 export default class ForgotPasswordScreen extends Component {
   render() {
@@ -16,9 +16,9 @@ export default class ForgotPasswordScreen extends Component {
           returnKeyType='next'
           placeholder='email'/>
 
-        <Button>
+        {/*<Button>
           <Text>Send Password Reset Email</Text>
-        </Button>
+        </Button>*/}
 
       </View>
     );

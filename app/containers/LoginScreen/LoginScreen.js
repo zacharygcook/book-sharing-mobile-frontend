@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, TextInput, View } from 'react-native';
-import { Button } from 'native-base';
+// import { Button } from 'native-base';
 
 export default class LoginScreen extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
+      <View>
+        <Text>
           Welcome to Book Sharing Application
         </Text>
 
@@ -22,9 +22,9 @@ export default class LoginScreen extends Component {
           returnKeyType='next'
           placeholder='password' />
 
-        <Button>
+        {/*<Button>
           <Text>Sign In</Text>
-        </Button>
+        </Button>*/}
 
         <Text>Not Yet Registered? --> Sign Up</Text>
 
@@ -34,19 +34,5 @@ export default class LoginScreen extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'lightgrey',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-});
 
 AppRegistry.registerComponent('LoginScreen', () => LoginScreen);

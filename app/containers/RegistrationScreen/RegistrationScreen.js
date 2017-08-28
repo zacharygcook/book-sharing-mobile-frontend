@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, TextInput, View } from 'react-native';
-import { Button } from 'native-base';
+// import { Button } from 'native-base';
 
 export default class RegistrationScreen extends Component {
   render() {
@@ -26,9 +26,9 @@ export default class RegistrationScreen extends Component {
           returnKeyType='next'
           placeholder='password' />
 
-        <Button>
+        {/*<Button>
           <Text>Sign Up!</Text>
-        </Button>
+        </Button>*/}
 
       </View>
     );
