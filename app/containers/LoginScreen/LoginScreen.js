@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, TextInput, View } from 'react-native';
 // import { Button } from 'native-base';
+import { Actions } from 'react-native-router-flux';
 
 export default class LoginScreen extends Component {
 
@@ -26,9 +27,17 @@ export default class LoginScreen extends Component {
           <Text>Sign In</Text>
         </Button>*/}
 
-        <Text>Not Yet Registered? --> Sign Up</Text>
+        <Text
+          onPress={() => Actions.register()}
+        >
+          Not Yet Registered? --> Sign Up
+        </Text>
 
-        <Text>Forgot Your Password? --> Reset Password</Text>
+        <Text
+          onPress={() => Actions.forgotPassword()}
+        >
+          Forgot Your Password? --> Reset Password
+        </Text>
 
       </View>
     );
