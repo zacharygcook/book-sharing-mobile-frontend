@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Styles from '../../styles/RegistrationScreenStyle';
+import customAxios from '../../axios/axios';
 
 export default class RegistrationScreen extends Component {
 
@@ -30,8 +31,27 @@ export default class RegistrationScreen extends Component {
   }
 
   submitRegistrationForm = () => {
-    console.log("Hit this form!");
-    Actions.pop();
+    // customAxios({
+    //   method: 'post',
+    //   url: 'user',
+    //   data: {
+    //     username: this.state.username,
+    //     password: this.state.passwordTwo
+    //   }
+    // }).then(function (response) {
+    //   console.log("The response we got: ", response);
+    // }).catch(function (err) {
+    //   console.log("Uh oh we got an error: ", err);
+    // });
+    fetch('http://localhost:1337/user')
+      .then((res) => res.json())
+      .then((resJSON) => {
+        console.log("Response JSON: ", resJSON);
+      })
+      .catch((err) => {
+        console.log("Error: ", err);
+      });
+    // Actions.pop();
   }
 
   render() {

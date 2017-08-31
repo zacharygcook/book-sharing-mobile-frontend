@@ -17,6 +17,10 @@
    * cd /...howeveryougettoit.../BookSharingApp/
    * react-native run-android
 
+#### Open Source React Native Apps to Follow and Learn From
+
+"5 React Native Open Source Projects to Learn From" article here - https://blog.codeinfuse.com/5-open-source-react-native-projects-to-learn-from-fb7e5cfe29f2
+
 #### Helpful Debugging Advice
 
 ##### Tip 1 - Resetting Cache
