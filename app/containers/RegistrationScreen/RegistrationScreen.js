@@ -17,17 +17,14 @@ export default class RegistrationScreen extends Component {
   }
 
   handleChangeUsername = (text) => {
-    console.log("What it gave us -> ", text);
     this.setState({ username: text });
   }
 
   handleChangePassword1 = (text) => {
-    console.log("What it gave us -> ", text);
     this.setState({ passwordOne: text });
   }
 
   handleChangePassword2 = (text) => {
-    console.log("What it gave us -> ", text);
     this.setState({ passwordTwo: text });
   }
 
