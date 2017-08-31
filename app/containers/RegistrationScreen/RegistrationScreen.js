@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Styles from '../../styles/RegistrationScreenStyle';
+import BasicStyles from '../../styles/BasicStyles';
 import customAxios from '../../axios/axios';
 
 export default class RegistrationScreen extends Component {
@@ -57,7 +58,7 @@ export default class RegistrationScreen extends Component {
     const { username, passwordOne, passwordTwo } = this.state
     return (
       <View>
-        <Text>
+        <Text style={BasicStyles.headingTwoStyle}>
           Register Now
         </Text>
 
@@ -83,19 +84,13 @@ export default class RegistrationScreen extends Component {
           onChangeText={this.handleChangePassword2}
           returnKeyType='go'
           secureTextEntry
-          placeholder='password' />
+          placeholder='retype password' />
 
         <View>
           <TouchableOpacity style={Styles.registrationButton} onPress={this.submitRegistrationForm}>
-            <Text>Sign Up!</Text>
+            <Text style={Styles.registrationButtonText}>Sign Up!</Text>
           </TouchableOpacity>
         </View>
-
-        <Text
-          onPress={() => Actions.pop()}
-        >
-          Go Back to Login
-        </Text>
 
       </View>
     );

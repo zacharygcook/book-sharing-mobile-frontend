@@ -29,7 +29,7 @@ Run: npm start -- --reset-cache
 
 After running npm start -- --reset-cache sometimes need to also re-run react-native run-android for it to rebuild properly
 
-##### Tip 1 - How to do Logging in Local Dev
+##### Tip 2 - How to do Logging in Local Dev
 
 react-native log-ios
 
@@ -38,3 +38,6 @@ react-native log-ios
 react-native log-android
 
 More detailed debugging tips - https://medium.com/reactnativeacademy/debugging-react-native-applications-6bff3f28c375
+
+
+#### React Native Cheat Sheet - https://github.com/refinery29/react-native-cheat-sheet
