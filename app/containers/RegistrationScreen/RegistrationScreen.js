@@ -31,27 +31,26 @@ export default class RegistrationScreen extends Component {
   }
 
   submitRegistrationForm = () => {
-    // customAxios({
-    //   method: 'post',
-    //   url: 'user',
-    //   data: {
-    //     username: this.state.username,
-    //     password: this.state.passwordTwo
-    //   }
-    // }).then(function (response) {
-    //   console.log("The response we got: ", response);
-    // }).catch(function (err) {
-    //   console.log("Uh oh we got an error: ", err);
-    // });
-    fetch('http://localhost:1337/user')
-      .then((res) => res.json())
-      .then((resJSON) => {
-        console.log("Response JSON: ", resJSON);
-      })
-      .catch((err) => {
-        console.log("Error: ", err);
-      });
-    // Actions.pop();
+
+    // Validation
+
+    customAxios({
+      method: 'post',
+      url: 'user',
+      data: {
+        email: this.state.username,
+        password: this.state.passwordTwo
+      }
+    }).then(function (response) {
+      console.log("The response we got: ", response);
+
+      if (response.status == 200) {
+        console.log("Status code equals 200");
+      }
+    }).catch(function (err) {
+      console.log("Uh oh we got an error: ", err);
+    });
+
   }
 
   render() {

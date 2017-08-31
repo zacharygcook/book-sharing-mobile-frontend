@@ -1,7 +1,7 @@
 import axios from 'react-native-axios';
 
 var customAxios = axios.create({
-	baseURL: 'http://localhost:1337/',
+	baseURL: 'http://192.168.1.11:1337/',
 	timeout: 1000
 });
 
