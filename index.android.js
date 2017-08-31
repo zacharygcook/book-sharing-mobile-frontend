@@ -17,6 +17,10 @@ export default class BookSharingApp extends Component {
           <Scene key="forgotPassword" component={ForgotPasswordScreen} title="Forgot Password?" />
         </Stack>
 
+        {/*<Stack key="loggedin">
+          <Scene key="homepage" component={HomePage} title="Home Page" />
+        </Stack>*/}
+
       </Router>);
   }
 }

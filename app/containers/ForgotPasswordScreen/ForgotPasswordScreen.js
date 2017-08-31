@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, TextInput, View } from 'react-native';
-// import { Button } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
 export default class ForgotPasswordScreen extends Component {

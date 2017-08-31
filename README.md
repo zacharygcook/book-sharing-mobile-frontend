@@ -20,3 +20,5 @@
 #### Helpful Debugging Advice
 
 Run: npm start -- --reset-cache
+
+After running npm start -- --reset-cache sometimes need to also re-run react-native run-android for it to rebuild properly
