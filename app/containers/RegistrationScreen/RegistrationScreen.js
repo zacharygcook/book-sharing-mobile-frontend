@@ -44,7 +44,6 @@ export default class RegistrationScreen extends Component {
       }
     }).then(function (response) {
       console.log("The response we got: ", response);
-
       if (response.status == 200) {
         console.log("Status code equals 200");
       }
@@ -58,7 +57,7 @@ export default class RegistrationScreen extends Component {
     const { username, passwordOne, passwordTwo } = this.state
     return (
       <View>
-        <Text style={BasicStyles.headingTwoStyle}>
+        <Text style={BasicStyles.headingTwo}>
           Register Now
         </Text>
 

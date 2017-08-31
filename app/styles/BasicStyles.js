@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-	headingTwoStyle: {
+	headingTwo: {
 		fontSize: 25,
 		textAlign: 'center',
 		paddingTop: 12,

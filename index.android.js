@@ -12,7 +12,7 @@ export default class BookSharingApp extends Component {
     return (
       <Router>
         <Stack key="root">
-          <Scene key="login" component={LoginScreen} title="Login" />
+          <Scene key="login" component={LoginScreen} hideNavBar={true} />
           <Scene key="register" component={RegistrationScreen} title="Registration" />
           <Scene key="forgotPassword" component={ForgotPasswordScreen} title="Forgot Password?" />
         </Stack>
