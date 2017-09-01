@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, TouchableOpacity, StyleSheet, Text, TextInput, View } from 'react-native';
+import { AppRegistry, Image, TouchableOpacity, StyleSheet, Text, TextInput, View } from 'react-native';
 import Styles from '../../styles/LoginScreenStyle';
 import { Actions } from 'react-native-router-flux';
 import customAxios from '../../axios/axios';
@@ -29,10 +29,6 @@ export default class LoginScreen extends Component {
 
     // TODO: Validation
 
-    // axios.post('http://192.168.1.11:1337/login', {
-    //   email: this.state.username,
-    //   password: this.state.password
-    // })
 
     // Its absolutely KEY! to define this information up here
     // Because 'this' keyword has a different value depending of where it is called.
@@ -89,9 +85,16 @@ export default class LoginScreen extends Component {
     return (
       <View>
 
-        <Text style={Styles.homeHeading}>
-          Welcome to the FREE Book Sharing Application!
-        </Text>
+        <View style={Styles.headingWrapper}>
+          <Image
+            style={Styles.bookStackImage}
+            source={require('../../images/book-stack.png')}
+          />
+
+          <Text style={Styles.homeHeading}>
+            Book Sharing Application
+          </Text>
+        </View>
 
         <TextInput
           ref='username'
@@ -134,15 +137,6 @@ export default class LoginScreen extends Component {
             onPress={() => Actions.forgotPassword()}
           >
             Forgot Your Password? --> Reset Password
-          </Text>
-        </View>
-
-        <View style={Styles.outlineButton}>
-          <Text
-            style={Styles.outlineButtonText}
-            onPress={() => Actions.homepage()}
-          >
-            Try going straight to the home page
           </Text>
         </View>
 

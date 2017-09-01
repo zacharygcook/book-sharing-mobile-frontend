@@ -1,18 +1,18 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-	registrationButton: {
-		backgroundColor: '#66D366',
+	resetPasswordButton: {
+		backgroundColor: '#FFD27F',
 		height: 25,
 		width: 130,
 		alignSelf: 'center',
-		borderColor: "#006600",
+		borderColor: "#AC1D1C",
 		borderWidth: 1
 	},
-	registrationButtonText: {
+	resetPasswordButtonText: {
 		textAlign: 'center'
 	},
-	formWrapper: {
-		marginTop: 100,
+	resetPasswordFormWrapper: {
+		paddingTop: 100
 	}
 });

@@ -1,10 +1,14 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
+	headingWrapper: {
+		justifyContent: 'center',
+		paddingTop: 50
+	},
 	homeHeading: {
 		fontSize: 25,
 		textAlign: 'center',
-		paddingTop: 80,
+		paddingTop: 15,
 		paddingBottom: 12		
 	},
 	errorMessage: {
@@ -12,10 +16,10 @@ export default StyleSheet.create({
 		marginBottom: 12,
 		textAlign: 'center'
 	},
-	errorMessageWrapper: {
+	bookStackImage: {
+		height: 103,
+		width: 156.6,
 		alignSelf: 'center',
-		backgroundColor: '#FF6666',
-		width: 280,
 	},
 	loginButton: {
 		backgroundColor: '#7F7FFF',

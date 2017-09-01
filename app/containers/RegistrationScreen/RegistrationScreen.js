@@ -54,38 +54,39 @@ export default class RegistrationScreen extends Component {
     const { username, passwordOne, passwordTwo } = this.state
     return (
       <View>
-        <Text style={BasicStyles.headingTwo}>
-          Register Now
-        </Text>
 
-        <TextInput
-          ref='username'
-          keyboardType='email-address'
-          value={username}
-          onChangeText={this.handleChangeUsername}
-          returnKeyType='next'
-          placeholder='email'/>
+        <View style={Styles.formWrapper}>
 
-        <TextInput
-          ref='passwordOne'
-          value={passwordOne}
-          onChangeText={this.handleChangePassword1}
-          returnKeyType='next'
-          secureTextEntry
-          placeholder='password' />
+          <TextInput
+            ref='username'
+            keyboardType='email-address'
+            value={username}
+            onChangeText={this.handleChangeUsername}
+            returnKeyType='next'
+            placeholder='email'/>
 
-        <TextInput
-          ref='passwordTwo'
-          value={passwordTwo}
-          onChangeText={this.handleChangePassword2}
-          returnKeyType='go'
-          secureTextEntry
-          placeholder='retype password' />
+          <TextInput
+            ref='passwordOne'
+            value={passwordOne}
+            onChangeText={this.handleChangePassword1}
+            returnKeyType='next'
+            secureTextEntry
+            placeholder='password' />
 
-        <View>
-          <TouchableOpacity style={Styles.registrationButton} onPress={this.submitRegistrationForm}>
-            <Text style={Styles.registrationButtonText}>Sign Up!</Text>
-          </TouchableOpacity>
+          <TextInput
+            ref='passwordTwo'
+            value={passwordTwo}
+            onChangeText={this.handleChangePassword2}
+            returnKeyType='go'
+            secureTextEntry
+            placeholder='retype password' />
+
+          <View>
+            <TouchableOpacity style={Styles.registrationButton} onPress={this.submitRegistrationForm}>
+              <Text style={Styles.registrationButtonText}>Sign Up!</Text>
+            </TouchableOpacity>
+          </View>
+
         </View>
 
       </View>
