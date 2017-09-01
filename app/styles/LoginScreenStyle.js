@@ -7,6 +7,16 @@ export default StyleSheet.create({
 		paddingTop: 80,
 		paddingBottom: 12		
 	},
+	errorMessage: {
+		marginTop: 12,
+		marginBottom: 12,
+		textAlign: 'center'
+	},
+	errorMessageWrapper: {
+		alignSelf: 'center',
+		backgroundColor: '#FF6666',
+		width: 280,
+	},
 	loginButton: {
 		backgroundColor: '#7F7FFF',
 		marginTop: 12,

@@ -13,7 +13,7 @@ export default class LoginScreen extends Component {
       username: '',
       password: '',
       errorMessage: '',
-      showErrorMessage: false
+      errorMessageDisplay: 'none'
     }
   }
 
@@ -25,49 +25,63 @@ export default class LoginScreen extends Component {
     this.setState({ password: text });
   }
 
-  handleFailure = (errorResponse) => {
-    console.log("Error response: ", errorResponse);
-    this.setState({
-      errorMessage: errorResponse.message
+  submitLoginForm = () => {
+
+    // TODO: Validation
+
+    // axios.post('http://192.168.1.11:1337/login', {
+    //   email: this.state.username,
+    //   password: this.state.password
+    // })
+
+    // Its absolutely KEY! to define this information up here
+    // Because 'this' keyword has a different value depending of where it is called.
+    // this in this.setState should refer to the constructor object, and when you call this inside a function, it refers to the window object. 
+    // That is why you assign 'this' to the variable 'self' up above
+    // More on this here: https://stackoverflow.com/questions/41194866/how-to-set-state-of-response-from-axios-in-react
+    var self = this;
+
+    customAxios({
+      method: 'post',
+      url: 'login',
+      data: {
+        email: this.state.username,
+        password: this.state.password
+      }
+    }).then(function (response) {
+
+      console.log("The response we got: ", response);
+
+      if (!response.data.user) {
+        console.log("No user was sent!");
+        self.setState({ 
+          errorMessage: response.data.message,
+          errorMessageDisplay: 'flex'
+        });
+      } else {
+        console.log("This user was sent: ", response.data.user);
+        self.setState({ 
+          errorMessage: '',
+          errorMessageDisplay: 'none'
+        });
+        Actions.homepage();
+      }
+
+    }).catch(function (err) {
+
+      console.log("Got an error logging in, heres the message: ", err);
+      throw err;
+
     });
   }
 
-  submitLoginForm = () => {
-
-    // Validation
-
-    // customAxios({
-    //   method: 'post',
-    //   url: 'login',
-    //   data: {
-    //     email: this.state.username,
-    //     password: this.state.password
-    //   }
-    // }).then(function (response) {
-    //   console.log("The response we got: ", response);
-    //   if (response.status == 200) {
-    //     console.log("Status code equals 200");
-    //     Actions.homepage();
-    //   }
-    // }).catch(function (err) {
-    //   console.log("Got an error logging in, heres the message: ", err.response.data);
-    //   throw err;
-    //   this.handleFailure(err.response.data);
-    //   reject(err);
-    // });
-
-    axios.post('http://192.168.1.11:1337/login', {
-      email: this.state.username,
-      password: this.state.password
-    }).then(function (response) {
-      console.log("The response we got: ", response);
-      if (response.status == 200) {
-        console.log("Status code equals 200");
-        Actions.homepage();
-      }
-    }).catch(function (err) {
-      console.log("Got an error logging in, heres the message: ", err.response.data);
-    });
+  errorMessageStyle = function (options) {
+    return {
+      alignSelf: 'center',
+      backgroundColor: '#FF6666',
+      width: 280,
+      display: this.state.errorMessageDisplay
+    }
   }
 
   render() {
@@ -101,8 +115,8 @@ export default class LoginScreen extends Component {
           </TouchableOpacity>
         </View>
 
-        <View>
-          <Text>{this.state.errorMessage}</Text>
+        <View style={this.errorMessageStyle()}>
+          <Text style={Styles.errorMessage}>{this.state.errorMessage}</Text>
         </View>
 
         <View style={Styles.outlineButton}>
