@@ -26,6 +26,7 @@ export default class LoginScreen extends Component {
   }
 
   submitLoginForm = () => {
+    console.log("Hit submit login form.");
 
     // TODO: Validation
 

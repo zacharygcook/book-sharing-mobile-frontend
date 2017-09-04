@@ -33,12 +33,14 @@ export default class BookSharingApp extends Component {
     return (
       <Router>
         <Stack key="root">
-          <Scene key="login" component={LoginScreen} hideNavBar={true} />
+          {/* Logged in routes */}
+          <Scene key="homepage" onEnter={isLoggedIn} component={HomePage} hideNavBar />          
+
+          <Scene key="login" component={LoginScreen} hideNavBar />
           <Scene key="register" component={RegistrationScreen} title="Registration" />
           <Scene key="forgotPassword" component={ForgotPasswordScreen} title="Forgot Password?" />
 
-          {/* Logged in routes */}
-          <Scene key="homepage" onEnter={isLoggedIn} component={HomePage} title="Home Page" />
+
         </Stack>
 
       </Router>);
